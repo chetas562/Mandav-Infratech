@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandav Infratech & Co. | Premium Positive Lifts Solutions</title>
+    <style>
+        :root {
+            --primary: #0A3663; /* Deep Blue from Mandav Logo */
+            --secondary: #C5A059; /* Gold/Bronze Accent from Lift interiors */
+            --dark: #222222;
+            --light: #F4F6F9;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        /* Brand Logo Container Layout */
+        .brand-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        /* Brand Logo Image Styling - Explicitly targeting images.png */
+        .brand-logo-img {
+            height: 65px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+            font-size: 12px;
+            display: block;
+            font-weight: 600;
+            margin-top: 2px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 54, 99, 0.85), rgba(10, 54, 99, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23ffffff" stroke-width="0.5" stroke-opacity="0.1"/></svg>');
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #E0E6ED;
+        }
+
+        .cta-btn {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            background-color: #B38E46;
+        }
+
+        /* Sections General */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+            margin: 10px auto 0;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .badge-container {
+            background-color: var(--light);
+            padding: 30px;
+            border-left: 5px solid var(--secondary);
+            border-radius: 4px;
+        }
+
+        .badge-container h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Highlight Section */
+        .bg-light {
+            background-color: var(--light);
+            max-width: 100%;
+        }
+        .bg-light .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 60px 20px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+
+        .footer-col p, .footer-col ul {
+            list-style: none;
+            font-size: 14px;
+            color: #CCD6E0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 14px;
+            color: #A0B2C6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; text-align: center; gap: 15px; }
+            nav ul { margin-top: 5px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <!-- Left Corner Corporate Logo Dynamic Reference -->
+            <a href="#" class="brand-logo-container">
+                <img src="images.png" alt="Mandav Infratech & Co. Logo" class="brand-logo-img">
+                <div class="logo-text">
+                    Mandav Infratech & Co.
+                    <span>Engineers & Govt. Contractors</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#turnkey">Turnkey Solutions</a></li>
+                    <li><a href="#segments">Segments</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="max-width:100%;">
+        <h1>Elevating Modern Infrastructure with Excellence</h1>
+        <p>Premium turnkey lift solutions designed for modern residential, commercial, and institutional infrastructures across Northern India.</p>
+        <a href="tel:+919871110630" class="cta-btn">Call Now: +91 9871110630</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Our Company</h2>
+        <div class="about-grid">
+            <div>
+                <p><strong>Mandav Infratech & Co.</strong> was founded in the year 2017 by <strong>Madhuvrat Sharma</strong>, a versatile leader in the elevator industry with over 28 years of extensive expertise in field operations, sales, service, and installation of elevators.</p>
+                <br>
+                <p>Before launching Mandav Infratech, Mr. Sharma served as the Regional Head at <em>Otis Elevator Company</em> and subsequently as Vice President at <em>Schindler India</em>, demonstrating strong leadership, operational excellence, and customer-focused service delivery.</p>
+                <br>
+                <p>Today, the company has successfully delivered around <strong>500+ projects</strong> across Northern India with exceptional product and service quality.</p>
+            </div>
+            <div class="badge-container">
+                <h3>Our Mission</h3>
+                <p>To create safe, stylish, efficient, and future-ready elevator systems that enhance accessibility, convenience, and property value.</p>
+                <br>
+                <h3>Track Record</h3>
+                <p>✔ 500+ Projects Completed<br>✔ End-to-End Turnkey Execution<br>✔ Built on Technical Mastery</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Expertise -->
+    <section id="expertise" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Core Expertise</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Lift Installation</h3>
+                    <p>Exclusive installations under our premium brand name <strong>POSITIVE LIFTS</strong>. Custom engineered for safety, speed, and luxury aesthetics.</p>
+                </div>
+                <div class="card">
+                    <h3>Structural Engineering</h3>
+                    <p>Expert construction of versatile lift shafts including <strong>RCC, Brick Wall, MS Glass,</strong> and <strong>MS ACP Lift Shaft Structures</strong>.</p>
+                </div>
+                <div class="card">
+                    <h3>MCD Approvals</h3>
+                    <p>Hassle-free execution with complete guidance, technical layout plans, and documentation support to secure official MCD clearance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Turnkey Solutions -->
+    <section id="turnkey">
+        <h2 class="section-title">Turnkey Project Lifecycle</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>1. Architectural Design</h3>
+                <p>Detailed planning and layout designs tailored to your building’s precise structural layout, load metrics, and custom aesthetics.</p>
+            </div>
+            <div class="card">
+                <h3>2. Professional Installation</h3>
+                <p>Precision execution by specialized Senior Architects, Structural Engineers, and technicians matching high global standards.</p>
+            </div>
+            <div class="card">
+                <h3>3. Operations & AMC</h3>
+                <p>Comprehensive long-term operational testing, performance fine-tuning, and reliable round-the-clock maintenance support.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Segments Served -->
+    <section id="segments" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Property Segments We Serve</h2>
+            <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                <div class="card" style="text-align: center;">
+                    <h3>DDA & Society Flats</h3>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3>Luxury Villas & Kothis</h3>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3>Schools & Colleges</h3>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3>Commercial Complexes</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Value -->
+    <section>
+        <h2 class="section-title">Why Choose Mandav Infratech?</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Advanced Value</h3>
+                <p>A professionally installed POSITIVE LIFT significantly enhances architectural appeal, accessibility, and market valuation of your property.</p>
+            </div>
+            <div class="card">
+                <h3>Uncompromised Safety</h3>
+                <p>Engineered with modern multi-layered safety mechanisms, smart recovery grids, and emergency fallback operations.</p>
+            </div>
+            <div class="card">
+                <h3>Transparent Pricing</h3>
+                <p>Clear, upfront cost breakdowns covering structural construction, mechanical components, and approval clearances without hidden charges.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Information -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Mandav Infratech & Co.</h4>
+                <p>Your premium partner for elegant elevator solutions, offering structural engineering and end-to-end turnkey development.</p>
+                <br>
+                <p><strong>Primary Contact:</strong><br>📞 +91 9871110630</p>
+                <p>📧 madhuvrat@mandavinfratech.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Corporate Offices</h4>
+                <ul>
+                    <li>
+                        <strong>Head Office (Delhi):</strong><br>
+                        BS-117, No. 2 & 3, Shalimar Bagh, New Delhi - 110088<br>
+                        ☎️ Tel: 011-35006269
+                    </li>
+                    <li style="margin-top: 15px;">
+                        <strong>South Delhi Branch:</strong><br>
+                        11/143-144, L.G. Floor, Shivalik Road, Malviya Nagar, New Delhi - 110017
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Regional Office</h4>
+                <ul>
+                    <li>
+                        <strong>Himachal Pradesh Branch:</strong><br>
+                        116/2, Purani Mandi, Mandi Town, H.P. - 175001<br>
+                        ☎️ Tel: 01905-356206
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Mandav Infratech & Co. | Lift Solutions Powered by POSITIVE LIFTS™. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
